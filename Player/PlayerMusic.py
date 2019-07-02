@@ -9,40 +9,40 @@ print('3 - Planeta Sonho')
 print('4 - Sutilmente')
 print('5 - Save Me')
 
-escolha = int(input('Qual musica tocar: '))
+choose = int(input('Which music to play?: '))
 
-if escolha == 1:
-    musica = 'Monster.mp3'
-elif escolha == 2:
-    musica = 'MeninaLinda.mp3'
-elif escolha == 3:
-    musica = 'PlanetaSonho.mp3'
-elif escolha == 4:
-    musica = 'Sutilmente.mp3'
-elif escolha == 5:
-    musica = 'SaveMe.mp3'
+if choose == 1:
+    song = 'Monster.mp3'
+elif choose == 2:
+    song = 'MeninaLinda.mp3'
+elif choose == 3:
+    song = 'PlanetaSonho.mp3'
+elif choose == 4:
+    song = 'Sutilmente.mp3'
+elif choose == 5:
+    song = 'SaveMe.mp3'
 
-pygame.mixer.music.load(musica)
+pygame.mixer.music.load(song)
 pygame.mixer.music.play()
 
-print('Tocando...')
-print('Digite \'stop\' para Parar!')
-print('Digite \'pause\' para Pausar!')
+print('Playing...')
+print('Type it \'stop\' to Stop!')
+print('Type it \'pause\' to Pause!')
 
 while pygame.mixer.music.get_busy():
     if input() == 'stop':
         pygame.mixer.music.stop()
         # break
     if input() == 'pause':
-        print('Pausado...')
+        print('Pausing...')
         pygame.mixer.music.pause()
-        print('Digite \'play\' para Continuar!')
+        print('Type it \'play\' to Continue!')
         if input() == 'play':
             pygame.mixer.music.unpause()
     pygame.time.Clock()
 
 print('\nStop')
 
-print(len(musica))
+print(len(song))
 
-# playsound.playsound(musica)
+# playsound.playsound(song)
